@@ -142,3 +142,89 @@ var changedAlex = changeAgeImpure(alex);
 console.log(alex); // -> { name: 'Alex', age: 25 }
 console.log(changedAlex); // -> { name: 'Alex', age: 25 }
 ```
+## Type Coercion 
+
+- chỉ có 3 loại chuyển đổi
+-- to string
+-- to number
+-- to boolean
+- unary + , ! sẽ được thực thi trước
+- Toán tử Logic || và && sẽ trả về giá trị gốc thay vì boolean 
+- object -> valueOf -> toString 
+
+Post: 
+[1](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/), 
+[2](https://thedevs.network/blog/type-coercion-in-javascript-and-why-everyone-gets-it-wrong)
+
+### To String
+
+```js
+String([1,2,3])    // 1,2,3 // chuỗi các giá trị của array ngăn bởi dấu ,
+String([])         // ""
+String({})         // '[object Object]'
+```
+
+### To Boolean
+
+```js
+Boolean('')           // false
+Boolean(0)            // false     
+Boolean(-0)           // false
+Boolean(NaN)          // false
+Boolean(null)         // false
+Boolean(undefined)    // false
+Boolean(false)        // false
+...                   // true
+```
+
+### To Number
+
+> Tất cả toán tử sẽ kích hoạt chuyển đổi số trừ toán tử  + (nếu có tồn tại toán hạng là chuỗi) hoặc ==, != (nếu cả hai toán hạng điều là chuỗi)
+
+
+```js
+Number(null)                   // 0
+Number(undefined)              // NaN
+Number(true)                   // 1
+Number(false)                  // 0
+Number(" 12 ")                 // 12
+Number("-12.34")               // -12.34
+Number("\n")                   // 0
+Number(" 12s ")                // NaN
+Number(123)                    // 123
+Number([])                     // 0
+```
+
+### Example
+
+```js
+true + false             // 1
+12 / "6"                 // 2
+"number" + 15 + 3        // 'number153'
+15 + 3 + "number"        // '18number'
+[1] > null               // true                ( 1 > 0)
+"foo" + + "bar"          // 'fooNaN' 
+'true' == true           // false               (NaN == 1)
+null == ''               // false               (null not convert to 0 when use ==)
+!!"false" == !!"true"    // true                (true == true)
+['x'] == 'x'             // true 
+[] + null + 1            // 'null1'             ('' + null => 'null')
+[1,2,3] == [1,2,3]       // false               (không phải cùng 1 đối tượng)
+{}+[]+{}+[1]             // '0[object Object]1'
+!+[]+[]+![]              // 'truefalse'         (!0 + [] + !true => true + '' + false)
+new Date(0) - 0          // 0                   (toán tử - kích hoạt chuyển đổi valueOf)
+new Date(0) + 0          // 'Thu Jan 0'         (toán tử - kích hoạt chuyển đổi toSTring)
+```
+
+## Equal
+
+[JS Comparison Table](https://dorey.github.io/JavaScript-Equality-Table/)
+
+```js
+null == 0               // false, null is not converted to 0
+null == null            // true
+undefined == undefined  // true
+null == undefined       // true
+NaN == NaN              // false
+```
+##
