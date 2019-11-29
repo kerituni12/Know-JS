@@ -227,4 +227,25 @@ undefined == undefined  // true
 null == undefined       // true
 NaN == NaN              // false
 ```
-##
+
+## Scope 
+
+- Global 
+- Local     (in function)
+- Block     (in block, IIFE will create a block scope) 
+- Lexical   (Every inner level can access its outer levels.)
+
+## V8
+
+Bài viết
+📜 Vài nét về V8 - Javascript Engine đằng sau Chrome và Node.js
+📜 Cách thức hoạt động của JavaScript: V8 engine và 5 mẹo tối ưu hóa
+📜 JavaScript Engines — Jen Looper
+📜 Understanding How the Chrome V8 Engine Translates JavaScript into Machine Code — DroidHead
+📜 Understanding V8’s Bytecode — Franziska Hinkelmann
+📜 How the V8 engine works? — Thibault Laurens
+📜 A Brief History of Google’s V8 Javascript Engine — Clair Smith
+📜 JavaScript essentials: why you should know how the engine works - Rainer Hahnekamp
+Videos
+🎥 Javascript Chuyên Sâu: Javascript Engine là gì? V8 là sao?
+🎥 JavaScript Engines: The Good Parts™ — Mathias Bynens & Benedikt Meurer
