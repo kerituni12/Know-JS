@@ -313,7 +313,10 @@ console.log(1, 2, ...a);  // 1, 2, 1, 2
 
 - Anonymous funtion no name
 - Expression ( biểu thức hàm )
-- Arrow function () => {} , không binding this, không được hoisted
+- Arrow function () => {} , không binding this (không tạo ra ngữ cảnh this của riêng hàm), không được hoisted
+
+[Readmore](https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+[When use arrow funtion] (https://www.freecodecamp.org/news/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26/)
 
 ## Bitwise Operator
 
@@ -321,3 +324,47 @@ Readmore:  [E](https://blog.logrocket.com/interesting-use-cases-for-javascript-b
 [Case use](https://stackoverflow.com/questions/654057/where-would-i-use-a-bitwise-operator-in-javascript),    
 [Case use](https://codeburst.io/using-javascript-bitwise-operators-in-real-life-f551a731ff5),   
 [Case use](https://medium.com/bother7-blog/bitwise-operators-in-javascript-65c4c69be0d3)
+
+
+## DOM 
+
+> mô hình các đối tượng trong tài liệu HTML, có nhiệm vụ xử lý các vấn đề như đổi thuộc tính của thẻ, đổi cấu trúc HTML của thẻ,...
+
+## Factory Function
+
+> Là một function không phải class hoặc hàm khởi tạo trả về new object mà trả về 1 object khi không dùng từ khóa new
+
+```js
+const createUser = ({ userName, avatar }) => ({
+  userName,
+  avatar,
+  setUserName (userName) {
+    this.userName = userName;
+    return this;
+  }
+});
+console.log(createUser({ userName: 'echo', avatar: 'echo.png' }));
+```
+
+- Default Parameters
+
+```js
+const createUser = ({
+  userName = 'Anonymous',
+  avatar = 'anon.png'
+} = {}) => ({
+  userName,
+  avatar
+});
+console.log(
+  // { userName: "echo", avatar: 'anon.png' }
+  createUser({ userName: 'echo' }),
+  // { userName: "Anonymous", avatar: 'anon.png' }
+  createUser()
+);
+```
+
+## This, call, bind, apply
+
+[This](https://kipalog.com/posts/Con-tro-this-trong-Javascript)
+[Call , bind, apply](https://kipalog.com/posts/PHAN-BIET-CALL--APPLY-VA-BIND-TRONG-JAVASCRIPT)
