@@ -291,3 +291,5 @@ console.log(add10(2))   // 4   (2)
 (function(){})             // true
 (function(user){})(user)   // exec
 ```
+## Rest Vs Spread
+
