@@ -293,3 +293,25 @@ console.log(add10(2))   // 4   (2)
 ```
 ## Rest Vs Spread
 
+```js
+//rest
+function rest (a, ...b) {
+  console.log(a);         // 1
+  console.log(b);         // [2, 3, 4]
+}
+
+rest(1, 2, 3, 4);
+
+// spread
+let a = [1, 2]
+
+console.log(1, 2, ...a);  // 1, 2, 1, 2
+
+```
+
+## Function Arrow, Anonymous, Expression
+
+- Anonymous funtion no name
+- Expression ( biểu thức hàm )
+- Arrow function () => {} , không binding this, không được hoisted
+
