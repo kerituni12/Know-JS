@@ -315,3 +315,9 @@ console.log(1, 2, ...a);  // 1, 2, 1, 2
 - Expression ( biểu thức hàm )
 - Arrow function () => {} , không binding this, không được hoisted
 
+## Bitwise Operator
+
+Readmore:  [E](https://blog.logrocket.com/interesting-use-cases-for-javascript-bitwise-operators/), [V](http://fedu.vn/thu-vien-hoc-tap/lap-trinh-web/front-end/javascript/huong-dan-javascript/cac-phep-tinh-bitwise-trong-javascript/),   
+[Case use](https://stackoverflow.com/questions/654057/where-would-i-use-a-bitwise-operator-in-javascript),    
+[Case use](https://codeburst.io/using-javascript-bitwise-operators-in-real-life-f551a731ff5),   
+[Case use](https://medium.com/bother7-blog/bitwise-operators-in-javascript-65c4c69be0d3)
