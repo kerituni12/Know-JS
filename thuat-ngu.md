@@ -237,15 +237,57 @@ NaN == NaN              // false
 
 ## V8
 
-Bài viết
-📜 Vài nét về V8 - Javascript Engine đằng sau Chrome và Node.js
-📜 Cách thức hoạt động của JavaScript: V8 engine và 5 mẹo tối ưu hóa
-📜 JavaScript Engines — Jen Looper
-📜 Understanding How the Chrome V8 Engine Translates JavaScript into Machine Code — DroidHead
-📜 Understanding V8’s Bytecode — Franziska Hinkelmann
-📜 How the V8 engine works? — Thibault Laurens
-📜 A Brief History of Google’s V8 Javascript Engine — Clair Smith
-📜 JavaScript essentials: why you should know how the engine works - Rainer Hahnekamp
-Videos
-🎥 Javascript Chuyên Sâu: Javascript Engine là gì? V8 là sao?
-🎥 JavaScript Engines: The Good Parts™ — Mathias Bynens & Benedikt Meurer
+[Cách thức hoạt động của JavaScript: V8 engine và 5 mẹo tối ưu hóa](https://techtalk.vn/cach-hoat-dong-cua-javascript-v8-engine-va-5-meo-toi-uu-hoa.html)
+
+## Strict Mode
+
+#### Not
+
+- undefined
+- Tên hàm trùng các keyword
+- Trùng thuộc tính
+- Tham số cùng tên
+- Gán giá trị cho read-only
+- Thay đổi arguments object
+- Định nghĩa theo hệ cơ số 8
+- Dùng eval để tạo biến
+
+## New keyword , Prototype
+
+[New Keywords](https://www.youtube.com/watch?v=d4zeaaJ1C7I&list=PLRhlTlpDUWsxVCluXaURF6NA_Q6uTSBFm&index=28)
+
+[Prototype](https://www.youtube.com/watch?v=pw45j6C5RyM&list=PLRhlTlpDUWsxVCluXaURF6NA_Q6uTSBFm&index=29)
+
+## Closure
+
+> Closures là khả năng của một chức năng ghi nhớ và tiếp tục truy cập các biến được xác định bên ngoài phạm vi của nó, ngay cả khi chức năng đó được thực thi trong một phạm vi khác.
+
+- Outer keep states between multi call
+- Inner reference to variable outer
+- Return funtion to multi call
+
+```js
+function makeAdder() {
+   let a = 0;           // keep a = 2, for (2)
+  return function(y) {
+    return a += y;
+  };
+}
+
+var add10 = makeAdder();
+
+console.log(add10(2));  // 2   (1)
+console.log(add10(2))   // 4   (2)
+```
+
+## IIFE 
+
+> Là một function expression được thực thi ngay sau khi biên dịch
+
+- Tạo block scope riêng tránh sung đột global variable
+
+```js
+(var x = 1)                // fail
+(function(){})             // true
+(function(user){})(user)   // exec
+```
