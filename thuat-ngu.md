@@ -148,12 +148,12 @@ console.log(changedAlex); // -> { name: 'Alex', age: 25 }
 [Readmore](https://medium.com/@fknussel/arrays-objects-and-mutations-6b23348b54aa)
 [Case use](https://slemgrim.com/mutate-or-not-to-mutate/)
 
-## Higher Order Functions & Callback Functions
+## Higher Order Functions & Callback Functions , First class function
 
 - Higher Order Functions (nhận vào 1 hàm khác(callback) hoặc return ra 1 hàm khác)
 - Callback là hàm được truyền vào hàm khác như 1 tham số nó sẽ được gọi kích hoạt bên trong hàm gọi nó.
-
 - Lưu ý khi dùng callback (mất context this, callback hell)
+- First class function hiểu ngắn gọn là ngôn ngữ cho phép xài hàm như biến, và cho phép hàm trong hàm, là kết quả trả về của một hàm, lưu trữ dữ liệu hay thậm chí là có thuộc tính riêng như đối tượng (objects)
 
 ## Generator function , Yield
 
