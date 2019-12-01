@@ -403,3 +403,39 @@ console.log(
 
 [This](https://kipalog.com/posts/Con-tro-this-trong-Javascript)
 [Call , bind, apply](https://kipalog.com/posts/PHAN-BIET-CALL--APPLY-VA-BIND-TRONG-JAVASCRIPT)
+
+## Object.create vs Object.assgin
+
+> Object.create() tạo object mới, dùng object cũ như [ the prototype ] của object mới.
+
+```js
+const person = {
+  isHuman: false,
+  printIntroduction: function () {
+    console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+  }
+};
+
+const me = Object.create(person);
+
+printIntroduction();             -> to _proto_
+isHuman                          -> property
+```
+
+> Object.assign() sao chép tất cả thuộc tính enumerable từ 1 hoặc nhiều nguồn , (nguồn trước có thể được ghi đè bởi nguồn sau)
+
+```js
+var obj = Object.create({ foo: 1 }, { // foo is on obj's prototype chain.
+  bar: {
+    value: 2  // bar is a non-enumerable property.
+  },
+  baz: {
+    value: 3,
+    enumerable: true  // baz is an own enumerable property.
+  }
+});
+
+var copy = Object.assign({}, obj);
+console.log(copy); // { baz: 3 }
+```
+
