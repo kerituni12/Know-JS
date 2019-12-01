@@ -505,4 +505,33 @@ ES6 collection gồm Map, Set, WeakMap, WeakSet
 
 [Readmore](https://viblo.asia/p/es6-collection-map-set-weakmap-weakset-oOVlYqnQl8W)
 
-## 
+## Promise, Async await
+
+> Promise là một cơ chế trong JavaScript giúp bạn thực thi các tác vụ bất đồng bộ mà không rơi vào callback hell
+
+- Luôn đưa vào then 1 function
+
+```js
+const promise = new Promise((resolve, reject) => {
+  // Note: resolve chỉ cho phép truyền đúng 1 param
+  return resolve(27)
+})
+
+// Tham số  từ resolve sẽ được chuyển đến then.
+promise.then(number => console.log(number)) // 27
+```
+
+```js
+const add2 = x => x + 2
+
+//Promise.resolve(4).then(result => add2(result))
+
+Promise.resolve(4).then(add2)
+```
+
+> async/await là một cơ chế giúp bạn thực hiện các thao tác bất đồng bộ một cách tuần tự hơn. Async/await vẫn sử dụng Promise ở bên dưới nhưng mã nguồn của bạn (theo một cách nào đó) sẽ trong sáng và dễ theo dõi.
+
+- Để sử dụng, bạn phải khai báo hàm với từ khóa async. Khi đó bên trong hàm bạn có thể dùng await.
+- Dùng await sẽ chặn câu lệnh sau nó thực thi
+
+[Readmore](https://ehkoo.com/bai-viet/tat-tan-tat-ve-promise-va-async-await)
