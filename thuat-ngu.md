@@ -505,6 +505,8 @@ ES6 collection gồm Map, Set, WeakMap, WeakSet
 
 [Readmore](https://viblo.asia/p/es6-collection-map-set-weakmap-weakset-oOVlYqnQl8W)
 
+[Case use](https://codeburst.io/array-vs-set-vs-map-vs-object-real-time-use-cases-in-javascript-es6-47ee3295329b)
+
 ## Promise, Async await
 
 > Promise là một cơ chế trong JavaScript giúp bạn thực thi các tác vụ bất đồng bộ mà không rơi vào callback hell
