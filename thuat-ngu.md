@@ -107,7 +107,7 @@ refArr = [1, 2]; // trỏ đến vùng nhớ khác
 console.log(arr === refArr); //false
 ```
 
-## Pure Vs Impure Function 
+## Pure Vs Impure Function , Mutate
 
 > Một hàm chỉ thuần nếu nếu được cung cấp cùng một đầu vào, nó sẽ luôn tạo ra cùng một đầu ra, không tạo ra tác dụng phụ, không dùng các giá trị bên ngoài
 
@@ -142,6 +142,56 @@ var changedAlex = changeAgeImpure(alex);
 console.log(alex); // -> { name: 'Alex', age: 25 }
 console.log(changedAlex); // -> { name: 'Alex', age: 25 }
 ```
+
+### Mutate
+
+[Readmore](https://medium.com/@fknussel/arrays-objects-and-mutations-6b23348b54aa)
+[Case use](https://slemgrim.com/mutate-or-not-to-mutate/)
+
+## Higher Order Functions & Callback Functions
+
+- Higher Order Functions (nhận vào 1 hàm khác(callback) hoặc return ra 1 hàm khác)
+- Callback là hàm được truyền vào hàm khác như 1 tham số nó sẽ được gọi kích hoạt bên trong hàm gọi nó.
+
+- Lưu ý khi dùng callback (mất context this, callback hell)
+
+## Generator function , Yield
+
+> Generators are functions which can be exited and later re-entered
+
+```js
+function* name([param[, param[, ... param]]]) {
+   statements
+}
+```
+
+> yeild là từ khóa dùng để tạm dừng và cũng để tiếp tục việc thực thi bên trong generator function.
+
+```js
+function* generatorFunc(index) {
+  while (index < 2) {
+    yield index++;
+  }
+}
+
+const iterator = generatorFunc(0);
+
+console.log(iterator.next());
+// log output: {value : 0, done : false}
+
+console.log(iterator.next());
+// log output: {value : 1, done : false}
+
+console.log(iterator.next());
+// log output: {value : underfined, done : true}
+```
+
+>yield* có thể nhúng mã của một generator function ngay sau nó hoặc là ủy quyền trực tiếp cho một iterator object.
+
+
+[Readmore](https://viblo.asia/p/javascript-es6-generators-and-yield-m68Z00bAZkG)
+
+
 ## Type Coercion 
 
 - chỉ có 3 loại chuyển đổi
@@ -441,3 +491,18 @@ var copy = Object.assign({}, obj);
 console.log(copy); // { baz: 3 }
 ```
 
+## Recursion (Đệ quy)
+
+Deep copy array with recursion
+
+```js
+const clone = (items) => items.map(item => Array.isArray(item) ? clone(item) : item);
+```
+
+## Collection 
+
+ES6 collection gồm Map, Set, WeakMap, WeakSet
+
+[Readmore](https://viblo.asia/p/es6-collection-map-set-weakmap-weakset-oOVlYqnQl8W)
+
+## 
