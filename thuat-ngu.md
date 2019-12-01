@@ -254,9 +254,25 @@ NaN == NaN              // false
 
 ## New keyword , Prototype
 
+### New
+> New Dùng để Khởi tạo đối tượng
+
+- Nó tạo ra một đối tượng mới, rỗng.
+- Nó liên kết this với đối tượng mới được tạo.
+- Nó thêm một thuộc tính vào đối tượng mới được tạo của chúng ta có tên là __proto__, trỏ vào đối tượng nguyên mẫu của hàm tạo.
+- Nó thêm a return this vào cuối hàm, để đối tượng được tạo được trả về từ hàm.
+
 [New Keywords](https://www.youtube.com/watch?v=d4zeaaJ1C7I&list=PLRhlTlpDUWsxVCluXaURF6NA_Q6uTSBFm&index=28)
 
+### Prototype
+
+> là một đối tượng liên kết các function và object (mặc định) cho phép function và object kế thừa các thuộc tính và method từ prototype của mình
+
+- Có thể truy cập, chỉnh sửa prototype của function 
+- Protype của object sẽ được chuyển sang proto khi tạo mới object
+
 [Prototype](https://www.youtube.com/watch?v=pw45j6C5RyM&list=PLRhlTlpDUWsxVCluXaURF6NA_Q6uTSBFm&index=29)
+
 
 ## Closure
 
@@ -309,14 +325,33 @@ console.log(1, 2, ...a);  // 1, 2, 1, 2
 
 ```
 
-## Function Arrow, Anonymous, Expression
+## Function Arrow, Anonymous, Expression, Constructor
 
 - Anonymous funtion no name
 - Expression ( biểu thức hàm )
+- Constructor ( viết hoa từ đầu tiên, được excute với toán tử new)
+
+```js
+
+// Nếu return một đối tượng, thì đối tượng được trả về thay vì this.
+// Nếu return một gt nguyên thủy, nó bị bỏ qua.
+
+function BigUser() {
+
+  this.name = "John";
+
+  return { name: "Godzilla" };  // <-- returns this object
+}
+
+alert( new BigUser().name );  // Godzilla, got that object
+```
+
 - Arrow function () => {} , không binding this (không tạo ra ngữ cảnh this của riêng hàm), không được hoisted
 
 [Readmore](https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 [When use arrow funtion] (https://www.freecodecamp.org/news/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26/)
+
+
 
 ## Bitwise Operator
 
