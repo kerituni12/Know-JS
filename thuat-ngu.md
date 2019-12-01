@@ -422,6 +422,8 @@ printIntroduction();             -> to _proto_
 isHuman                          -> property
 ```
 
+[Benifits](https://stackoverflow.com/questions/17392857/benefits-of-using-object-create-for-inheritance)
+
 > Object.assign() sao chép tất cả thuộc tính enumerable từ 1 hoặc nhiều nguồn , (nguồn trước có thể được ghi đè bởi nguồn sau)
 
 ```js
