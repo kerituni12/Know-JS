@@ -1,3 +1,7 @@
 - state should immutated
 
-mount(gắn) vs unmout(bỏ ra)
+mount(gọi các api để thêm component vào trang)  vs unmout(ngược lại , khi thực hiện chuyển trang ... )
+
+componentdidmount được gọi 1 lần(đầu tiên) khi khi component được gắn vào dom
+didupdate được gọi từ lần thứ 2 trở đi nếu có thay đổi props state
+willunmount gọi trước khi được unmount
