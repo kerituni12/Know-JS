@@ -298,6 +298,12 @@ Default to const, because it cannot be re-assigned or re-declared
 Use let when you want to re-assign the variable in future
 Always prefer using let over var and const over let
 
+Note:
+
+Có thể thay đổi toàn bộ mảng sử dụng từ khóa const bởi vì nó chỉ thay đổi giá trị tham chiếu chứ không thực hiện gán lại giá trị
+
+https://stackoverflow.com/questions/23436437/why-can-i-change-value-of-a-constant-in-javascript
+
 ```js
 function foo(){
   for (let i=0; i<5 ; i++){
